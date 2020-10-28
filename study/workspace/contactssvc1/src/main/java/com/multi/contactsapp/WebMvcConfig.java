@@ -17,6 +17,7 @@ import org.springframework.web.accept.ContentNegotiationManagerFactoryBean;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
@@ -92,4 +93,13 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	            .additionalMessageConverters(new StringHttpMessageConverter(Charset.forName("UTF-8")))
 	            .build();
 	}
+
+	/*
+	 * @Override public void addCorsMappings(CorsRegistry registry) { // TODO
+	 * Auto-generated method stub registry.addMapping("/contacts/**")
+	 * .allowedOrigins("http://client:8000","http://jcornor.com:8000")
+	 * .allowedMethods("GET","POST","PUT","DELETE","HEAD", "OPTIONS")
+	 * .allowCredentials(true) .maxAge(3600); }
+	 */
+	
 }

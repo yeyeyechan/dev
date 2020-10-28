@@ -1,6 +1,7 @@
 package com.multi.contactsapp;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import com.multi.contactsapp.domain.Result;
 import com.multi.contactsapp.service.ContactService;
 import com.multi.contactsapp.util.ApiException;
 
+@CrossOrigin(origins = {"http://jcornor.com:8000"})
 @RestController
 @RequestMapping(value = "/contacts")
 public class ContactRestController {
