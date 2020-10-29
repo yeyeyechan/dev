@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src ="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+//문서가 완전히 로드 ready 되면 실행
+//$ 제이쿼리 함수
+$(function(){
+	$.get("http://localhost:8080/contacts", {pageno:1, pagesize:2}, function(data){
+		console.log(data)
+	})
+/* 	$.ajax({
+		url:"http://10.7.5.100:8080/contacts",
+		type:"GET",
+		data: {pageno:1, pagesize:2},
+		dataType: "json", // accept헤더 전송, 여기까지 요청정보, 받으면 done실행
+		
+	})
+	.done(function(data){
+		console.log(data);
+	}) */
+});
+</script>
+</head>
+<body>
+	<div id ="a"> 1111</div>
+	<div class="main">2222</div>
+	<div class="test main">3333</div>
+	<div>4444</div>
+</body>
+</html>

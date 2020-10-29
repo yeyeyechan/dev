@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Build-Jdk-Spec: 1.8
+Created-By: Maven Archiver 3.5.0
+
+Name: feature.xml
+SHA-256-Digest: 9Piwe9Pq0OUfkt2g8YqxmMPhnrxL5zR0cELmvk2/4MM=
+
+Name: license.txt
+SHA-256-Digest: sLkPmfcJKnlgb+KxHHYANEMYi2REKvOLeYql416fDEo=
+
+Name: feature.properties
+SHA-256-Digest: fYcdspbCZx2ETU39B2YK/YXVrP4IHWQbQgcn/c+Ah7c=
+

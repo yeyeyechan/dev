@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+	//문서가 완전히 로드 ready 되면 실행
+	//$ 제이쿼리 함수
+	$(function() {
+		$.ajax({
+			url : "http://localhost:8080/contacts",
+			type : "GET",
+			data : {
+				pageno : 1
+			},
+			dataType : "jsonp",
+			jsonp : "callback"
+		}).done(function(data) {
+			console.log("## JSONP jQuery $.ajax() 이용");
+			console.log(data);
+		})
+
+	});
+	/* 
+	 function test(data){
+	 console.log("##jsonp 실행");
+	 console.log(data);
+	 } */
+</script>
+<!-- <script type="text/javascript" src="http://sample.bmaster.kro.kr/contacts?callback=test&pageno=1">
+ -->
+</script>
+</head>
+<body>
+	<div id="a">1111</div>
+	<div class="main">2222</div>
+	<div class="test main">3333</div>
+	<div>4444</div>
+</body>
+</html>
