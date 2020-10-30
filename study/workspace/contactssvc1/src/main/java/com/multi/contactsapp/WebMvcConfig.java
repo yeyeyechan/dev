@@ -42,6 +42,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		registry.addResourceHandler("/photos/**").addResourceLocations("file:///c:/dev/study/temp2/")
 				.setCacheControl(CacheControl.noCache());
 		// .setCacheControl(CacheControl.masAge(Duration.ofDays(1));
+		registry.addResourceHandler("/swagger-ui/**")
+		.addResourceLocations("classpath:/META-INF/resources/webjars/springfox-swagger-ui/")
+		.resourceChain(false);
 	}
 
 	@Bean(name = "jsonView")
