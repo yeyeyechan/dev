@@ -1,30 +1,17 @@
 from src.com.stock.common.import_lib import *
 
-def make_indi_init(IndiTR, ReceiveData,ReceiveSysMsg ):
-    IndiTR = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
-    IndiTR.ReceiveData.connect(ReceiveData)
-    IndiTR.ReceiveSysMsg.connect(ReceiveSysMsg)
-    return
-
-def set_single_call(tr_class, input_dict):
-    ret = tr_class.IndiTR.dynamicCall("SetQueryName(QString)", tr_class.tr_name)
-    for key , value in input_dict.items():
-        ret = tr_class.IndiTR.dynamicCall("SetSingleData(int, QString)", key, value)
-    rqid = tr_class.IndiTR.dynamicCall("RequestData()")
-    tr_class.rqidD[rqid] =  tr_class.tr_name
-
-
-def make_dict(array):
-    dict = {}
-    for i in range(len(array)):
-        dict[i] = array[i]
-    return dict
 class tr_result():
     def __init__(self, list, listLen):
         self.list = list
         self.listLen = listLen
 
         self.result = {"list": self.list, "lsitLen": self.listLen}
+
+def make_dict(array):
+    dict = {}
+    for i in range(len(array)):
+        dict[i] = array[i]
+    return dict
 
 class tr_object2(QMainWindow):
     def __init__(self, tr_name, db_collection):
@@ -41,19 +28,38 @@ class tr_object2(QMainWindow):
         self.tr_name = tr_name
         self.col_name = {}
         self.pk_dict = {}
+        self.received = False
         self.last_call = False
         self.list = []
         self.listLen = 0
 
-    def set_single_call(self, input_dict, output_dict, pk_dict, last_call):
+    def set_single_call(self, input_dict_list, output_dict, pk_dict_list, collection_len):
+        self.received = False
+        self.list = []
+        self.listLen = 0
+
+        self.input_dict_list = input_dict_list
+        self.pk_dict_list = pk_dict_list
+        self.collection_len = collection_len
+
+        self.input_index = 0
+
         ret = self.IndiTR.dynamicCall("SetQueryName(QString)", self.tr_name)
-        for key, value in input_dict.items():
+        for key, value in self.input_dict_list[0].items():
             ret = self.IndiTR.dynamicCall("SetSingleData(int, QString)", key, value)
         rqid = self.IndiTR.dynamicCall("RequestData()")
         self.rqidD[rqid] = self.tr_name
         self.col_name = output_dict
-        self.pk_dict = pk_dict
-        self.last_call = last_call
+
+    def single_call(self):
+
+
+        ret = self.IndiTR.dynamicCall("SetQueryName(QString)", self.tr_name)
+        for key, value in self.input_dict_list[self.input_index].items():
+            ret = self.IndiTR.dynamicCall("SetSingleData(int, QString)", key, value)
+        rqid = self.IndiTR.dynamicCall("RequestData()")
+        self.rqidD[rqid] = self.tr_name
+
 
     def ReceiveData(self, rqid):
         TRName = self.rqidD[rqid]
@@ -65,20 +71,26 @@ class tr_object2(QMainWindow):
                 # 데이터 받기
                 DATA = {}
 
-                for key , value in self.pk_dict.items():
+                for key , value in self.pk_dict_list[self.input_index].items():
                     DATA[key] = value
                 for key, value in self.col_name.items():
                     DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
-                print(DATA)
+                #print(DATA)
+                #update_collection(self.collection, DATA)
                 self.list.append(DATA)
-        if self.last_call:
-            QCoreApplication.instance().quit()
-        return
+        print(self.list)
+        self.input_index +=1
+        if self.input_index != self.collection_len:
+            self.single_call()
+        else:
+            QCoreApplication.instance().exit()
+
     def GetDataAll(self):
         result = tr_result(self.list, self.listLen)
         return result
-
     # 시스템 메시지를 받은 경우 출력합니다.
     def ReceiveSysMsg(self, MsgID):
         print("System Message Received = ", MsgID)
         print("System Error Message Received = ",self.IndiTR.GetErrorMessage())
+
+

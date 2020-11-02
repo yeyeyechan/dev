@@ -8,6 +8,8 @@ from PyQt5.QtWidgets import *
 from src.com.stock.util.mongo_db import *
 from src.com.stock.util.indi_interect import *
 from src.com.stock.util.indi_interect2 import *
-import threading
 import time
-import win32event
+import win32com.client as com
+from threading import Thread
+import pythoncom
+from copy import copy

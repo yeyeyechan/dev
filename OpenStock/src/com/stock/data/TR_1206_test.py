@@ -2,7 +2,7 @@
 
 # -*- coding: utf-8 -*-
 from src.com.stock.common.import_lib import *
-
+from copy import copy
 '''
 TR_1206 설명
 
@@ -225,7 +225,7 @@ if __name__ == "__main__":
     collection_len = from_collection.count()
     index =0
     collection = make_collection("stock_data", "TR_1206")
-    activate_Tr = tr_object("TR_1206", collection)
+    activate_Tr = tr_object2("TR_1206", collection)
 
     start_date = "20201010"
     end_date = "20201101"
@@ -238,14 +238,24 @@ if __name__ == "__main__":
     pk_dict_list = []
     input_dict_list = []
     for i in from_collection.find():
+
         stock_code = i["단축코드"]
 
         pk_dict["단축코드"] = stock_code
-        input_dict[0] = stock_code
+        input_dict[0]= stock_code
+
 
         pk_dict_list.append(copy(pk_dict))
         input_dict_list.append(copy(input_dict))
+    print(pk_dict_list[0].items())
+    DATA = {}
 
+    for key, value in pk_dict_list[0].items():
+        print(key)
+        print(value)
+        DATA[key] = value
+    print(DATA)
     activate_Tr.set_single_call(input_dict_list, col_name, pk_dict_list, collection_len)
 
+        #print(activate_Tr.GetDataAll())
     app.exec_()
