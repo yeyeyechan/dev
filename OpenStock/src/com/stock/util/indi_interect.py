@@ -85,8 +85,8 @@ class tr_object(QMainWindow):
                 for key, value in self.col_name.items():
                     DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
                     # print(DATA)
-                    update_collection(self.collection, DATA)
-                    self.list.append(DATA)
+                update_collection(self.collection, DATA)
+                self.list.append(DATA)
             print(self.list)
             print()
             self.input_index += 1

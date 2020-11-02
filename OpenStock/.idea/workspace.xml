@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7826cb9f-7eb9-4fbf-b5c2-e411692a8361" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/stock/data/TR_1206_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/stock/util/indi_interect3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/OpenStock.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OpenStock.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stock/common/import_lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stock/common/import_lib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stock/data/TR_1206.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stock/data/TR_1206.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/stock/util/indi_interect.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stock/util/indi_interect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stock/util/indi_interect2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stock/util/indi_interect2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/stock/util/indi_interect.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="77" column="31" lean-forward="true" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
+            <state relative-caret-position="397">
+              <caret line="103" selection-start-line="103" selection-end-line="103" />
             </state>
           </provider>
         </entry>
@@ -31,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/stock/util/indi_interect2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="77" selection-start-line="77" selection-end-line="85" selection-end-column="46" />
+            <state relative-caret-position="304">
+              <caret line="82" column="51" lean-forward="true" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -49,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/stock/data/TR_1206.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="232" column="19" lean-forward="true" selection-start-line="220" selection-start-column="4" selection-end-line="220" selection-end-column="19" />
+            <state relative-caret-position="511">
+              <caret line="238" column="24" lean-forward="true" selection-start-line="220" selection-start-column="4" selection-end-line="220" selection-end-column="19" />
               <folding>
                 <element signature="e#73#122#1" />
                 <element signature="e#123#259#1" />
@@ -106,6 +99,7 @@
       <find>일자</find>
       <find>self.index</find>
       <find>drop_collection</find>
+      <find>단축코드</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -221,7 +215,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.mongo_db">
+  <component name="RunManager" selected="Python.TR_1206">
     <configuration name="TR_1206" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="OpenStock" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -329,8 +323,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.mongo_db" />
         <item itemvalue="Python.TR_1206" />
+        <item itemvalue="Python.mongo_db" />
         <item itemvalue="Python.TR_1206_test" />
         <item itemvalue="Python.indi_interect2" />
         <item itemvalue="Python.login" />
@@ -416,6 +410,16 @@
           <line>95</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/com/stock/util/indi_interect.py</url>
+          <line>103</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/com/stock/util/indi_interect.py</url>
+          <line>102</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -475,13 +479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/stock/util/indi_interect2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="77" selection-start-line="77" selection-end-line="85" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/stock/common/import_lib.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -499,10 +496,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/stock/util/indi_interect2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="82" column="51" lean-forward="true" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/stock/data/TR_1206.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="232" column="19" lean-forward="true" selection-start-line="220" selection-start-column="4" selection-end-line="220" selection-end-column="19" />
+        <state relative-caret-position="511">
+          <caret line="238" column="24" lean-forward="true" selection-start-line="220" selection-start-column="4" selection-end-line="220" selection-end-column="19" />
           <folding>
             <element signature="e#73#122#1" />
             <element signature="e#123#259#1" />
@@ -514,8 +518,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/stock/util/indi_interect.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="77" column="31" lean-forward="true" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
+        <state relative-caret-position="397">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
         </state>
       </provider>
     </entry>
