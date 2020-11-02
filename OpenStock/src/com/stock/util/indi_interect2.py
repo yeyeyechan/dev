@@ -1,6 +1,4 @@
 from src.com.stock.common.import_lib import *
-import win32event
-import pythoncom
 
 def make_indi_init(IndiTR, ReceiveData,ReceiveSysMsg ):
     IndiTR = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
@@ -15,13 +13,20 @@ def set_single_call(tr_class, input_dict):
     rqid = tr_class.IndiTR.dynamicCall("RequestData()")
     tr_class.rqidD[rqid] =  tr_class.tr_name
 
+
 def make_dict(array):
     dict = {}
     for i in range(len(array)):
         dict[i] = array[i]
     return dict
+class tr_result():
+    def __init__(self, list, listLen):
+        self.list = list
+        self.listLen = listLen
 
-class tr_object(QMainWindow):
+        self.result = {"list": self.list, "lsitLen": self.listLen}
+
+class tr_object2(QMainWindow):
     def __init__(self, tr_name, db_collection):
         super().__init__()
 
@@ -36,15 +41,11 @@ class tr_object(QMainWindow):
         self.tr_name = tr_name
         self.col_name = {}
         self.pk_dict = {}
-        self.received = False
         self.last_call = False
         self.list = []
         self.listLen = 0
 
     def set_single_call(self, input_dict, output_dict, pk_dict, last_call):
-        self.received = False
-        self.list = []
-        self.listLen = 0
         ret = self.IndiTR.dynamicCall("SetQueryName(QString)", self.tr_name)
         for key, value in input_dict.items():
             ret = self.IndiTR.dynamicCall("SetSingleData(int, QString)", key, value)
@@ -54,9 +55,6 @@ class tr_object(QMainWindow):
         self.pk_dict = pk_dict
         self.last_call = last_call
 
-        while self.received:
-            pythoncom.PumpWaitingMessages()
-        return
     def ReceiveData(self, rqid):
         TRName = self.rqidD[rqid]
         if TRName == self.tr_name:
@@ -71,21 +69,16 @@ class tr_object(QMainWindow):
                     DATA[key] = value
                 for key, value in self.col_name.items():
                     DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
-                #print(DATA)
-                #update_collection(self.collection, DATA)
+                print(DATA)
                 self.list.append(DATA)
-        print(self.list)
-        self.received = True
-
         if self.last_call:
             QCoreApplication.instance().quit()
         return
     def GetDataAll(self):
         result = tr_result(self.list, self.listLen)
         return result
+
     # 시스템 메시지를 받은 경우 출력합니다.
     def ReceiveSysMsg(self, MsgID):
         print("System Message Received = ", MsgID)
         print("System Error Message Received = ",self.IndiTR.GetErrorMessage())
-
-

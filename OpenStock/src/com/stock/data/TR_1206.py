@@ -243,4 +243,6 @@ if __name__ == "__main__":
         pk_dict["단축코드"] = stock_code
         input_dict[0]= stock_code
         activate_Tr.set_single_call(input_dict, col_name, pk_dict, last_call)
+
+        #print(activate_Tr.GetDataAll())
     app.exec_()

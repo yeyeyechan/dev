@@ -2,97 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4770173f-9fbf-4bcc-a7ba-3311b469acfd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/OpenStock.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/stock/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/stock/common/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/stock/common/import_lib.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/stock/data/TR_1206.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/stock/data/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/stock/data/stock_mst.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/stock/login/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/stock/login/login.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/stock/util/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/stock/util/indi_interect.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/stock/util/mongo_db.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../stock_project/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../stock_project/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../stock_project/.idea/stock_project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../stock_project/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../stock_project/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/stock/util/indi_interect2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/OpenStock.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OpenStock.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stock/common/import_lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stock/common/import_lib.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stock/data/TR_1206.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stock/data/TR_1206.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stock/util/indi_interect.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stock/util/indi_interect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stock/util/mongo_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stock/util/mongo_db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../study/sts-4.7.1.RELEASE/configuration/org.eclipse.core.runtime/.manager/.tmp6705073582380363492.instance" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../study/sts-4.7.1.RELEASE/configuration/org.eclipse.equinox.app/.manager/.tmp513902163124419997.instance" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../study/sts-4.7.1.RELEASE/configuration/org.eclipse.osgi/217/data/-1467689649/content.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../study/sts-4.7.1.RELEASE/configuration/org.eclipse.osgi/217/data/-1467689649/content.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../study/sts-4.7.1.RELEASE/configuration/org.eclipse.osgi/217/data/-16397447/content.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../study/sts-4.7.1.RELEASE/configuration/org.eclipse.osgi/217/data/-16397447/content.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../study/sts-4.7.1.RELEASE/configuration/org.eclipse.osgi/217/data/-1900372091/content.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../study/sts-4.7.1.RELEASE/configuration/org.eclipse.osgi/217/data/-1900372091/content.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../study/sts-4.7.1.RELEASE/configuration/org.eclipse.osgi/217/data/-716752178/content.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../study/sts-4.7.1.RELEASE/configuration/org.eclipse.osgi/217/data/-716752178/content.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../study/sts-4.7.1.RELEASE/configuration/org.eclipse.osgi/217/data/1403519362/content.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../study/sts-4.7.1.RELEASE/configuration/org.eclipse.osgi/217/data/1403519362/content.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../study/sts-4.7.1.RELEASE/configuration/org.eclipse.osgi/217/data/1882025236/content.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../study/sts-4.7.1.RELEASE/configuration/org.eclipse.osgi/217/data/1882025236/content.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../study/sts-4.7.1.RELEASE/configuration/org.eclipse.wst.server.discovery/serverAdapterSitesDetails.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../study/sts-4.7.1.RELEASE/configuration/org.eclipse.wst.server.discovery/serverAdapterSitesDetails.xml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/stock/login/login.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="10" lean-forward="true" selection-start-line="1" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/stock/data/TR_1206.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
-              <folding>
-                <element signature="e#74#83#1" />
-                <element signature="e#211#219#1" />
-                <element signature="e#155#2351#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/stock/data/stock_mst.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="31" column="19" selection-start-line="30" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/stock/util/indi_interect.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="63" column="26" lean-forward="true" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/stock/util/mongo_db.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="27" column="26" selection-start-line="27" selection-end-line="27" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/stock/common/import_lib.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -104,121 +35,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/com/stock/login/login.py" />
-        <option value="$PROJECT_DIR$/src/com/stock/util/lib.py" />
-        <option value="$PROJECT_DIR$/src/com/stock/data/import_lib.py" />
-        <option value="$PROJECT_DIR$/src/com/stock/util/__init__.py" />
-        <option value="$PROJECT_DIR$/src/com/stock/data/stock_mst.py" />
-        <option value="$PROJECT_DIR$/src/com/stock/util/mongo_db.py" />
-        <option value="$PROJECT_DIR$/src/com/stock/data/TR_1206.py" />
-        <option value="$PROJECT_DIR$/src/com/stock/common/import_lib.py" />
-        <option value="$PROJECT_DIR$/src/com/stock/util/indi_interect.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
-  </component>
+  <component name="ProjectId" id="1jiFe32HscOJVRhyRoF9oeAm2Og" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="OpenStock" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenStock" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenStock" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenStock" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenStock" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenStock" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenStock" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenStock" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="stock" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenStock" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenStock" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="stock" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenStock" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenStock" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="stock" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenStock" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenStock" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="stock" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenStock" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenStock" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="stock" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/stock/data" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/stock/util" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\dev\OpenStock\src\com\stock\data" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\dev\OpenStock\src\com\stock\common" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\dev\OpenStock\src\com\stock\util" />
+      <recent name="C:\dev\OpenStock\src\com\stock\data" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.TR_1206">
     <configuration name="TR_1206" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -263,7 +99,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="login" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="indi_interect2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="OpenStock" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -271,11 +107,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/com/stock/login" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/com/stock/util" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/com/stock/login/login.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/com/stock/util/indi_interect2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -284,7 +120,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mongo_db" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="mongo_db" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="OpenStock" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -330,9 +166,9 @@
       <list>
         <item itemvalue="Python.TR_1206" />
         <item itemvalue="Python.indi_interect" />
-        <item itemvalue="Python.stock_mst" />
         <item itemvalue="Python.mongo_db" />
-        <item itemvalue="Python.login" />
+        <item itemvalue="Python.indi_interect2" />
+        <item itemvalue="Python.stock_mst" />
       </list>
     </recent_temporary>
   </component>
@@ -349,92 +185,73 @@
     </task>
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1654373" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329718" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
+  <component name="WindowStateProjectService">
+    <state width="1515" height="260" key="GridCell.Tab.0.bottom" timestamp="1604303164191">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="260" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604303164191" />
+    <state width="1515" height="260" key="GridCell.Tab.0.center" timestamp="1604303164191">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="260" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604303164191" />
+    <state width="1515" height="260" key="GridCell.Tab.0.left" timestamp="1604303164191">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="260" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604303164191" />
+    <state width="1515" height="260" key="GridCell.Tab.0.right" timestamp="1604303164191">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="260" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604303164191" />
+    <state width="1515" height="260" key="GridCell.Tab.1.bottom" timestamp="1604303164022">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="260" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604303164022" />
+    <state width="1515" height="260" key="GridCell.Tab.1.center" timestamp="1604303164022">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="260" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1604303164022" />
+    <state width="1515" height="260" key="GridCell.Tab.1.left" timestamp="1604303164022">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="260" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1604303164022" />
+    <state width="1515" height="260" key="GridCell.Tab.1.right" timestamp="1604303164022">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="260" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1604303164022" />
+    <state x="124" y="58" key="SettingsEditor" timestamp="1604302284095">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="124" y="58" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604302284095" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/com/stock/util/indi_interect2.py</url>
+          <line>82</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/com/stock/util/indi_interect2.py</url>
+          <line>83</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/com/stock/util/indi_interect2.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/com/stock/util/indi_interect.py</url>
-          <line>69</line>
-          <option name="timeStamp" value="7" />
+          <line>87</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/com/stock/util/indi_interect.py</url>
+          <line>88</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/stock/login/login.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="10" lean-forward="true" selection-start-line="1" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/stock/util/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/stock/data/import_lib.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/stock/util/mongo_db.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="27" column="26" selection-start-line="27" selection-end-line="27" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/stock/common/import_lib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/stock/data/stock_mst.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="31" column="19" selection-start-line="30" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/stock/util/indi_interect.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="63" column="26" lean-forward="true" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/stock/data/TR_1206.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
-          <folding>
-            <element signature="e#74#83#1" />
-            <element signature="e#211#219#1" />
-            <element signature="e#155#2351#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
