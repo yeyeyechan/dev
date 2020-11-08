@@ -23,7 +23,6 @@ def drop_collection(db_name, collection_name):
     return collection
 
 
-
 if __name__ ==  "__main__":
     drop_collection("stock_data", "TR_1206")
     '''drop_collection("stock_data", "TR_1206")'''

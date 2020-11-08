@@ -1,5 +1,5 @@
 from src.com.stock.common.import_lib import *
-
+from src.com.stock.common import import_lib  as com_vari
 
 
 
@@ -41,11 +41,23 @@ class tr_object(QMainWindow):
         self.list = []
         self.listLen = 0
 
+        self.multi= False
         self.input_dict_list = []
         self.pk_dict_list = []
         self.collection_len = 0
 
-    def set_single_call(self, input_dict_list, output_dict, pk_dict_list, collection_len):
+    def set_single_call(self, input_dict, output_dict, pk_dict):
+        self.multi= False
+        ret = self.IndiTR.dynamicCall("SetQueryName(QString)", self.tr_name)
+        for key, value in input_dict.items():
+            ret = self.IndiTR.dynamicCall("SetSingleData(int, QString)", key, value)
+        rqid = self.IndiTR.dynamicCall("RequestData()")
+        self.rqidD[rqid] = self.tr_name
+        self.col_name = output_dict
+        self.pk_dict = pk_dict
+
+    def set_multi_call(self, input_dict_list, output_dict, pk_dict_list, collection_len):
+        self.multi= True
         self.list = []
         self.listLen = 0
         self.input_index = 0
@@ -62,7 +74,7 @@ class tr_object(QMainWindow):
         self.rqidD[rqid] = self.tr_name
         self.col_name = output_dict
 
-    def single_call(self):
+    def inner_call(self):
         ret = self.IndiTR.dynamicCall("SetQueryName(QString)", self.tr_name)
         for key, value in self.input_dict_list[self.input_index].items():
             ret = self.IndiTR.dynamicCall("SetSingleData(int, QString)", key, value)
@@ -71,28 +83,45 @@ class tr_object(QMainWindow):
 
     def ReceiveData(self, rqid):
         TRName = self.rqidD[rqid]
+        #com_vari.TR_1206_logger.debug("TR_1206 데이터 수신")
+
         if TRName == self.tr_name:
             nCnt = self.IndiTR.dynamicCall("GetMultiRowCount()")
 
             self.list = []
             self.listLen = nCnt
+            if(self.multi):
+                for i in range(0, nCnt):
+                    # 데이터 받기
+                    DATA = {}
+                    for key , value in self.pk_dict_list[self.input_index].items():
+                        DATA[key] = value
+                    for key, value in self.col_name.items():
+                        DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
+                        # print(DATA)
+                    update_collection(self.collection, DATA)
+                    self.list.append(DATA)
 
-            for i in range(0, nCnt):
-                # 데이터 받기
-                DATA = {}
-                for key , value in self.pk_dict_list[self.input_index].items():
-                    DATA[key] = value
-                for key, value in self.col_name.items():
-                    DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
-                    # print(DATA)
-                update_collection(self.collection, DATA)
-                self.list.append(DATA)
-            print(self.list)
-            print()
-            self.input_index += 1
-            if self.input_index != self.collection_len:
-                self.single_call()
+                print(self.list)
+                if(TRName == "TR_1206" and com_vari.TR_1206_len_counts != self.listLen):
+                    logging_string = TRName +" 단축코드 : "+self.pk_dict_list[self.input_index]["단축코드"] + "가 " +str(nCnt)  + " 만큼 적재 되었습니다."
+                    com_vari.TR_1206_logger.debug(logging_string)
+                print()
+                self.input_index += 1
+                if self.input_index != self.collection_len:
+                    self.inner_call()
+                else:
+                    QCoreApplication.instance().exit()
             else:
+                for i in range(0, nCnt):
+                    # 데이터 받기
+                    DATA = {}
+                    for key, value in self.pk_dict.items():
+                        DATA[key] = value
+                    for key, value in self.col_name.items():
+                        DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
+                    print(DATA)
+                    update_collection(self.collection, DATA)
                 QCoreApplication.instance().exit()
 
     def GetDataAll(self):

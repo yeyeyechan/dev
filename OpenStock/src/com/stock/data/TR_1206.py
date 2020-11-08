@@ -2,6 +2,7 @@
 
 # -*- coding: utf-8 -*-
 from src.com.stock.common.import_lib import *
+from src.com.stock.common import import_lib  as com_vari
 
 '''
 TR_1206 설명
@@ -110,7 +111,7 @@ pk_dict = {"단축코드": "" , "데이터구분":""} # document 간 pk나 중�
 last_call = False
 
 if __name__ == "__main__":
-    drop_collection("stock_data", "TR_1206")
+    #drop_collection("stock_data", "TR_1206")
     app = QApplication(sys.argv)
 
     from_collection = make_collection("stock_data", "stock_mst")
@@ -119,11 +120,14 @@ if __name__ == "__main__":
     collection = make_collection("stock_data", "TR_1206")
     activate_Tr = tr_object("TR_1206", collection)
 
-    start_date = "20201010"
-    end_date = "20201101"
+
+    start_date = "20201101"
+    end_date = "20201109"
     gubun = "1"
     data_kind = "0"
 
+    check_list = integrity_db_count(start_date, end_date , collection_len)
+    com_vari.TR_1206_len_counts = check_list[0]
     pk_dict["데이터구분"] = data_kind
     input_dict = make_dict(["", start_date, end_date, gubun, data_kind])
 
@@ -137,7 +141,15 @@ if __name__ == "__main__":
 
         pk_dict_list.append(copy(pk_dict))
         input_dict_list.append(copy(input_dict))
-
-    activate_Tr.set_single_call(input_dict_list, col_name, pk_dict_list, collection_len)
+    com_vari.TR_1206_logger.debug("TR_1206 호출 시작")
+    activate_Tr.set_multi_call(input_dict_list, col_name, pk_dict_list, collection_len)
+    com_vari.TR_1206_logger.debug("TR_1206 호출 완료")
 
     app.exec_()
+
+    total_TR_1206_count = make_collection("stock_data", "TR_1206").count()
+
+    print("예상되는 실제 db 적재 document 갯수   "+ str(check_list[1]))
+    print("실제 db 적제된 document 갯수     "+str(total_TR_1206_count) )
+
+    print("원래")

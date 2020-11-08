@@ -45,5 +45,5 @@ if __name__ == "__main__":
 
     last_call = True
 
-    activate_Tr.set_single_call(input_dict, col_name, pk_dict, last_call)
+    activate_Tr.set_single_call(input_dict, col_name, pk_dict)
     app.exec_()
