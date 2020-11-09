@@ -97,7 +97,13 @@ class tr_object(QMainWindow):
                     for key , value in self.pk_dict_list[self.input_index].items():
                         DATA[key] = value
                     for key, value in self.col_name.items():
-                        DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
+                        if self.tr_name == "TR_1205":
+                            if key != 0 and key != 1 and key != 2 :
+                                DATA[value.strip()] = int(self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key))
+                            else:
+                                DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
+                        else:
+                            DATA[value.strip()] = self.IndiTR.dynamicCall("GetMultiData(int, int)", i, key)
                         # print(DATA)
                     update_collection(self.collection, DATA)
                     self.list.append(DATA)

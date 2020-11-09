@@ -24,7 +24,7 @@ def make_date_list (start_date, end_date):
 
     date_list = []
     for i in range(delta.days +1 ):
-        date_list.append(d1 + timedelta(days=i))
+        date_list.append((d1 + timedelta(days=i)))
     return date_list
 def get_kr_working_day(start_date, end_date):
     date_list = make_date_list(start_date, end_date)

@@ -121,7 +121,7 @@ if __name__ == "__main__":
     activate_Tr = tr_object("TR_1206", collection)
 
 
-    start_date = "20201101"
+    start_date = "20201109"
     end_date = "20201109"
     gubun = "1"
     data_kind = "0"
