@@ -111,18 +111,18 @@ pk_dict = {"단축코드": "" , "데이터구분":""} # document 간 pk나 중�
 last_call = False
 
 if __name__ == "__main__":
-    #drop_collection("stock_data", "TR_1206")
+    drop_collection("stock_data", "TR_1206")
     app = QApplication(sys.argv)
 
     from_collection = make_collection("stock_data", "stock_mst")
-    collection_len = from_collection.count()
+    collection_len = from_collection.estimated_document_count()
     index =0
     collection = make_collection("stock_data", "TR_1206")
     activate_Tr = tr_object("TR_1206", collection)
 
 
     start_date = "20201109"
-    end_date = "20201109"
+    end_date = "20201112"
     gubun = "1"
     data_kind = "0"
 
@@ -147,7 +147,7 @@ if __name__ == "__main__":
 
     app.exec_()
 
-    total_TR_1206_count = make_collection("stock_data", "TR_1206").count()
+    total_TR_1206_count = make_collection("stock_data", "TR_1206").estimated_document_count()
 
     print("예상되는 실제 db 적재 document 갯수   "+ str(check_list[1]))
     print("실제 db 적제된 document 갯수     "+str(total_TR_1206_count) )

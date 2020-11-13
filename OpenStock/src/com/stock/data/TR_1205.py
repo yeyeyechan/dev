@@ -51,7 +51,7 @@ pk_dict = {"일자": "" , "데이터구분":""} # document 간 pk나 중요정�
 last_call = False
 
 if __name__ == "__main__":
-    drop_collection("stock_data", "TR_1205")
+    #drop_collection("stock_data", "TR_1205")
     app = QApplication(sys.argv)
 
     collection = make_collection("stock_data", "TR_1205")
@@ -60,7 +60,7 @@ if __name__ == "__main__":
 
     upjong = ["0", "1"]
 
-    start_date = get_kr_working_day("20201012", "20201109")
+    start_date = get_kr_working_day("20201111", "20201112")
 
     data_kind = "price"
 
@@ -82,7 +82,7 @@ if __name__ == "__main__":
 
     app.exec_()
 
-    total_TR_1205_count = make_collection("stock_data", "TR_1205").count()
+    total_TR_1205_count = make_collection("stock_data", "TR_1205").estimated_document_count()
 
     print("업종 분류 종류     " + str(len(upjong)))
     print("데이터 적재 기간   "+ str(len(start_date)))

@@ -42,19 +42,19 @@ if __name__ == "__main__":
 
     stock_code_list = []
     final_stock_code_list = []
-    for i in collection.find({"일자": "20201106"}):
+    for i in collection.find({"일자": "20201111"}):
         if i['전일대비구분'] == '5':
             if total_trans_amount(i['가격'], i['누적거래량'], '10000000000' ):
                 stock_code_list.append(i['단축코드'])
     for i in stock_code_list:
-        data = collection.find_one({"일자": "20201109", "단축코드":i })
+        data = collection.find_one({"일자": "20201112", "단축코드":i })
         #print(data)
         if data['전일대비구분'] == '2' and check_for_amount(data['외국인순매수거래량'], '0') and check_pro_amount(data['프로그램순매수'], '0') and check_up_price(data['가격'] , data['전일대비']) and total_trans_amount(data['가격'],data['누적거래량'], '13000000000') :
             final_stock_code_list.append(data['단축코드'])
     print(final_stock_code_list)
 
 
-    TR_1205_date = get_kr_working_day("20201105", "20201109")
+    TR_1205_date = get_kr_working_day("20201111", "20201112")
 
     collection2 = make_collection("stock_data", "TR_1205")
 
