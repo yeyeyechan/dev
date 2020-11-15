@@ -109,6 +109,13 @@ class tr_object(QMainWindow):
                     self.list.append(DATA)
 
                 print(self.list)
+                if(self.list == []):
+                    for key, value in self.input_dict_list[self.input_index].items():
+                        com_vari.upjong_code_mst_logger.debug("데이터없음  key  "  +  str(key)  + "  value   " + value)
+                    for key , value in self.pk_dict_list[self.input_index].items():
+                        com_vari.upjong_code_mst_logger.debug("데이터없음  key  "  +  key  + "  value   " + value)
+                    com_vari.upjong_code_mst_logger.debug("데이터 없음 체크 완료")
+
                 if(TRName == "TR_1206" and com_vari.TR_1206_len_counts != self.listLen):
                     logging_string = TRName +" 단축코드 : "+self.pk_dict_list[self.input_index]["단축코드"] + "가 " +str(nCnt)  + " 만큼 적재 되었습니다."
                     com_vari.TR_1206_logger.debug(logging_string)

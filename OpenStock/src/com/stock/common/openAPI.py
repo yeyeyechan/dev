@@ -2,7 +2,7 @@ from src.com.stock.common.import_lib import *
 
 ServiceKey = 'IH3eLzricz4H%2BL6d6%2F6Jsfgv2FLrk2Gcb%2BtTO6kosso8AlkHeqZZbSyjsKAuBU9HrH2%2FGfAkFC2mXxZgv3RE8g%3D%3D'
 
-
+today = date.today().strftime("%Y%m%d")
 # 공공 데이터 포탈 api 호출 공통함수
 def call_api(ServiceKey, url, params, operation):
     params = urlparse.urlencode(params)
@@ -15,6 +15,14 @@ def call_api(ServiceKey, url, params, operation):
 
 # 공공데이터 포탈 공휴일 호출 함수
 def get_holiday(solYear, solMonth):
+    date_db = make_collection("stock_data" , "kr_holidays")
+    if date_db.find_one({"일자" : today}) is None :
+        drop_collection("stock_data" , "kr_holidays")
+    else:
+        for i in date_db.find():
+            for key_val in i.keys():
+                if key_val == "kr_holidays":
+                    return i["kr_holidays"]
     URL = 'http://apis.data.go.kr/B090041/openapi/service/SpcdeInfoService'
     # OPERATION = 'getHoliDeInfo' # 국경일 + 공휴일 정보 조회 오퍼레이션
     OPERATION = "getHoliDeInfo"
@@ -45,6 +53,9 @@ def get_holiday(solYear, solMonth):
             else:
                 list_kor_holiday.append(allData["locdate"])
                 print(allData["locdate"])
+    update_collection(date_db , {"일자" : today})
+    update_collection(date_db,{"kr_holidays" : list_kor_holiday} )
+
     return list_kor_holiday
 
 if __name__ == "__main__":

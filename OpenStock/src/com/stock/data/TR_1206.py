@@ -111,7 +111,7 @@ pk_dict = {"단축코드": "" , "데이터구분":""} # document 간 pk나 중�
 last_call = False
 
 if __name__ == "__main__":
-    drop_collection("stock_data", "TR_1206")
+    #drop_collection("stock_data", "TR_1206")
     app = QApplication(sys.argv)
 
     from_collection = make_collection("stock_data", "stock_mst")
@@ -121,8 +121,8 @@ if __name__ == "__main__":
     activate_Tr = tr_object("TR_1206", collection)
 
 
-    start_date = "20201109"
-    end_date = "20201112"
+    start_date = "20201113"
+    end_date = "20201115"
     gubun = "1"
     data_kind = "0"
 

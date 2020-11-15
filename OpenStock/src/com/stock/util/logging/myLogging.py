@@ -24,11 +24,18 @@ config = {
             "filename": ROOT_DIR+"/TR_1206.log",
             "formatter": "complex",
             "encoding": "utf-8"
+        },
+        "upjong_code_mst": {
+            "class": "logging.FileHandler",
+            "filename": ROOT_DIR+"/upjong_code_mst.log",
+            "formatter": "complex",
+            "encoding": "utf-8"
         }
+
     },
     #"root": {"handlers": ["console", "file"], "level": "WARNING"},
     "loggers": {"parent": {"level": "INFO"}, "parent.child": {"level": "DEBUG"}, "myLogger":{"handlers": [ "console", "file"], "level" :"DEBUG"},
-                "TR_1206":{"handlers": [ "console", "file","TR_1206"], "level" :"DEBUG"}},
+                "TR_1206":{"handlers": [ "console", "file","TR_1206"], "level" :"DEBUG"}, "upjong_code_mst":{"handlers": [ "console", "file","upjong_code_mst"], "level" :"DEBUG"}},
 
 }
 logging.config.dictConfig(config)
