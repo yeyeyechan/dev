@@ -30,6 +30,30 @@ def check_per_amount(volume , target):
         return True
     else:
         return False
+def check_for_min_amount(volume ,target):
+    # 외국인 순매수 거래량
+    if int(target) <= int(volume):
+        return False
+    else:
+        return True
+def check_com_min_amount(volume , target):
+    #기관순매수거래량
+    if int(target) <= int(volume):
+        return False
+    else:
+        return True
+def check_pro_min_amount(volume, target):
+    #프로그램순매수
+    if int(target )<= int(volume):
+        return False
+    else:
+        return True
+def check_per_min_amount(volume , target):
+    #개인순매수거래량
+    if int(target) <= int(volume):
+        return False
+    else:
+        return True
 def check_up_price(price,  diff, target):
     before = int(price) -int(diff)
     if  int(diff)/before *100 >=target:
@@ -40,6 +64,9 @@ def first_condition(target_date, input_dict):
     ''''
         first_gubun 5 (하락) 2(상승) 3(보합)
         first_trans_price 거래대금
+        first_foreign: 외국인 거래대금 기준
+        first_program: 프로그램 거래대금 기준
+        first_company: 기관 거래대금 기준
 
         2nd_foreign: 외국인 거래대금 기준
         2nd_program: 프로그램 거래대금 기준

@@ -51,7 +51,7 @@ pk_dict = {"일자": "" , "데이터구분":""} # document 간 pk나 중요정�
 last_call = False
 
 if __name__ == "__main__":
-    drop_collection("stock_data", "TR_1205")
+    #drop_collection("stock_data", "TR_1205")
     app = QApplication(sys.argv)
 
     collection = make_collection("stock_data", "TR_1205")
@@ -60,7 +60,7 @@ if __name__ == "__main__":
 
     upjong = ["0", "1"]
 
-    start_date = get_kr_working_day("20200803", "20201115")
+    start_date = get_kr_working_day("20201116", "20201116")
 
     data_kind = "price"
 

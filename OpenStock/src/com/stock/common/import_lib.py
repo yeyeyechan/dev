@@ -12,12 +12,13 @@ import requests
 import urllib.parse as urlparse
 from pytimekr.pytimekr import is_red_day
 from datetime import date, timedelta
+from datetime import datetime
 from PyQt5.QAxContainer import *
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import *
-from src.com.stock.util.logging.myLogging import *
+from src.com.stock.util.logger.myLogging import *
 from src.com.stock.util.mongo_db import *
 from src.com.stock.util.indi_interect import *
 from src.com.stock.common.openAPI import *
@@ -29,6 +30,7 @@ TR_1206_len_counts = 0
 
 myLogger = logging.getLogger("myLogger")
 TR_1206_logger = logging.getLogger("TR_1206")
+simulation_1_logger = logging.getLogger("simulation_1")
 upjong_code_mst_logger = logging.getLogger("upjong_code_mst")
 
 

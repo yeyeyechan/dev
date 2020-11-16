@@ -26,20 +26,20 @@ def get_kr_working_day_by_diff(input_working_date, diff):
         return input_working_date
     elif diff < 0:
         while diff != 0:
-            target_date = target_date - timedelta(days= abs(diff))
+            target_date = target_date - timedelta(days= abs(1))
             if is_red_day(target_date):
                 continue
-            elif target_date in kr_holiday:
+            elif target_date.strftime("%Y%m%d") in kr_holiday:
                 continue
             else:
                 diff = diff+1
         return target_date
     else:
         while diff != 0:
-            target_date = target_date + timedelta(days= abs(diff))
+            target_date = target_date + timedelta(days= abs(1))
             if is_red_day(target_date):
                 continue
-            elif target_date in kr_holiday:
+            elif target_date.strftime("%Y%m%d") in kr_holiday:
                 continue
             else:
                 diff = diff-1
@@ -72,4 +72,8 @@ def get_kr_working_day(start_date, end_date):
     return result
 
 if __name__ == "__main__":
-    print(get_kr_working_day("20200101", "20201103"))
+    test_date = datetime(2020,8,18)
+    test_date2 = get_kr_working_day_by_diff(test_date, -1)
+
+    print(test_date)
+    print(test_date2)

@@ -3,10 +3,13 @@ from src.com.stock.common.import_lib import *
 
 if __name__ == "__main__":
 
-    test_date = get_kr_working_day("20201111", "20201113")
+    test_date = get_kr_working_day("20201116", "20201117")
     input_dict = {
         "first_gubun": "",
         "first_trans_price": "",
+        "first_foreign": "",
+        "first_program": "",
+        "first_company": "",
         "2nd_foreign": "",
         "2nd_program": "",
         "2nd_company": "",
@@ -16,12 +19,20 @@ if __name__ == "__main__":
     }
     input_dict["first_gubun"] = "5"
     input_dict["first_trans_price"] = "10000000000"
-    input_dict["2nd_foreign"] = "0"
-    input_dict["2nd_program"] = "0"
+
+    input_dict["first_person"] = "0"
+    input_dict["first_foreign"] = "0"
+    input_dict["first_program"] = "0"
+    input_dict["first_company"] = "0"
+
+    input_dict["2nd_person"] = "0"
+    input_dict["2nd_foreign"] = "10"
+    input_dict["2nd_program"] = "10"
     input_dict["2nd_company"] = "0"
     input_dict["2nd_trans_price"] = "13000000000"
     input_dict["2nd_gubun"] = "2"
     input_dict["2nd_up_target"] = 3.0
+
 
     expected_stock_code_list = {}
     for i in test_date:
@@ -35,5 +46,13 @@ if __name__ == "__main__":
         print(i.strftime("%Y%m%d")+ "일자 상승 예상 종목  수  " + str(checked_result_data[i.strftime("%Y%m%d")+"_total_count"]))
         print(i.strftime("%Y%m%d") + "일자 상승 예측 성공 종목수   " +str( checked_result_data[i.strftime("%Y%m%d")+"_success"]))
         print(i.strftime("%Y%m%d") + "일자 실제 상승 종목수  " + str(actual_data[i.strftime("%Y%m%d")+"_success"]))
-        print(i.strftime("%Y%m%d") + "일자 상승 종목 전종목 대비 비율    " + str(int(actual_data[i.strftime("%Y%m%d")+"_success"])/int(actual_data[i.strftime("%Y%m%d")+"_total_count"])*100.0))
-        print(i.strftime("%Y%m%d") + "일자 상승 종목 예측 성공률    " + str(int(checked_result_data[i.strftime("%Y%m%d")+"_success"])/int(checked_result_data[i.strftime("%Y%m%d")+"_total_count"])*100.0))
+        if (int(actual_data[i.strftime("%Y%m%d")+"_total_count"])==0):
+            print(i.strftime("%Y%m%d") + "일자 전 종목중 5프로이상 오른 종목 없음  " )
+        else:
+            print(i.strftime("%Y%m%d") + "일자 상승 종목 전종목 대비 비율    " + str(int(actual_data[i.strftime("%Y%m%d")+"_success"])/int(actual_data[i.strftime("%Y%m%d")+"_total_count"])*100.0))
+
+        if (int(checked_result_data[i.strftime("%Y%m%d")+"_total_count"])==0):
+            print(i.strftime("%Y%m%d") + "일자 예측된 종목 없음  " )
+        else:
+            print(i.strftime("%Y%m%d") + "일자 상승 종목 예측 성공률    " + str(int(checked_result_data[i.strftime("%Y%m%d") + "_success"]) / int(checked_result_data[i.strftime("%Y%m%d") + "_total_count"]) * 100.0))
+
