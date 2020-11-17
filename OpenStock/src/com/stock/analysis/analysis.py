@@ -95,8 +95,12 @@ def first_condition(target_date, input_dict):
         if data is None:
             com_vari.TR_1206_logger.debug("TR_1206_db 데이터 없음 확인 필요   일자 " + second_date.strftime("%Y%m%d") + "   단축코드 " + i)
             continue
-        elif data['전일대비구분'] == input_dict["2nd_gubun"] and check_for_amount(data['외국인순매수거래량'], input_dict["2nd_foreign"] ) and check_pro_amount(data['프로그램순매수'], input_dict["2nd_program"]) and check_up_price(data['가격'] , data['전일대비'],input_dict["2nd_up_target"] ) and total_trans_amount(data['가격'],data['누적거래량'], input_dict["2nd_trans_price"]) :
-            final_stock_code_list.append(copy(data['단축코드']))
+        elif input_dict["first_gubun"] == "":
+            if check_for_amount(data['외국인순매수거래량'], input_dict["2nd_foreign"] ) and check_pro_amount(data['프로그램순매수'], input_dict["2nd_program"])  and total_trans_amount(data['가격'],data['누적거래량'], input_dict["2nd_trans_price"]) :
+                final_stock_code_list.append(copy(data['단축코드']))
+        else:
+            if data['전일대비구분'] == input_dict["2nd_gubun"] and check_for_amount(data['외국인순매수거래량'], input_dict["2nd_foreign"] ) and check_pro_amount(data['프로그램순매수'], input_dict["2nd_program"]) and check_up_price(data['가격'] , data['전일대비'],input_dict["2nd_up_target"] ) and total_trans_amount(data['가격'],data['누적거래량'], input_dict["2nd_trans_price"]) :
+                final_stock_code_list.append(copy(data['단축코드']))
     print(target_date.strftime("%Y%m%d") + " 날짜에 예측되는 상승 종목 코드 리스트  ")
     print(final_stock_code_list)
     print()

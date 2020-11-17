@@ -1,5 +1,7 @@
 import sys
 import os
+import numpy as np
+import pandas as pd
 import logging
 import logging.config
 import xmltodict
@@ -25,6 +27,7 @@ from src.com.stock.common.openAPI import *
 from src.com.stock.util.date import *
 from src.com.stock.util.data_check import *
 from src.com.stock.analysis.analysis import *
+from src.com.stock.util.toExcel import *
 
 TR_1206_len_counts = 0
 
@@ -32,7 +35,8 @@ myLogger = logging.getLogger("myLogger")
 TR_1206_logger = logging.getLogger("TR_1206")
 simulation_1_logger = logging.getLogger("simulation_1")
 upjong_code_mst_logger = logging.getLogger("upjong_code_mst")
-
+Today_date = datetime.now()
+Today_date = Today_date.strftime("%Y%m%d")
 
 '''KOSPI_UPJONG_CODE={
 "0001"	:"종합주가지수(KOSPI)",

@@ -60,7 +60,7 @@ if __name__ == "__main__":
 
     upjong = ["0", "1"]
 
-    start_date = get_kr_working_day("20201116", "20201116")
+    start_date = get_kr_working_day("20201117", "20201117")
 
     data_kind = "price"
 

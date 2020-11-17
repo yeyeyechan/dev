@@ -2,8 +2,11 @@ from src.com.stock.common.import_lib import *
 
 
 if __name__ == "__main__":
+    logic_name = "logic3"
+    collection = make_collection("stock_data", logic_name)
 
-    test_date = get_kr_working_day("20201116", "20201117")
+
+    test_date = get_kr_working_day("20201101", "20201118")
     input_dict = {
         "first_gubun": "",
         "first_trans_price": "",
@@ -17,7 +20,7 @@ if __name__ == "__main__":
         "2nd_gubun": "",
         "2nd_up_target": ""
     }
-    input_dict["first_gubun"] = "5"
+    input_dict["first_gubun"] = ""
     input_dict["first_trans_price"] = "10000000000"
 
     input_dict["first_person"] = "0"
@@ -30,7 +33,7 @@ if __name__ == "__main__":
     input_dict["2nd_program"] = "10"
     input_dict["2nd_company"] = "0"
     input_dict["2nd_trans_price"] = "13000000000"
-    input_dict["2nd_gubun"] = "2"
+    input_dict["2nd_gubun"] = ""
     input_dict["2nd_up_target"] = 3.0
 
 
@@ -38,7 +41,7 @@ if __name__ == "__main__":
     for i in test_date:
         first_condition_data = first_condition(i , input_dict)
         expected_stock_code_list[i.strftime("%Y%m%d")] = copy(first_condition_data)
-
+        update_collection(collection, {"일자":i.strftime("%Y%m%d") , "stock_code" : copy(first_condition_data) })
     checked_result_data = check_with_data(expected_stock_code_list , 5.0)
     actual_data = check_actual_total_data(test_date, 5.0)
 
